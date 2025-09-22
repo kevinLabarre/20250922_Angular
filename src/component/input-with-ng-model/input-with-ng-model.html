@@ -1,0 +1,20 @@
+<section>
+  <h1>Input avec "ngModel"</h1>
+  <p>Pour utiliser 'ngModel' il faut importer 'FormsModule'</p>
+  <input type="text" [(ngModel)]="inputValue" (ngModelChange)="handleChange($event)" />
+
+  <p>{{inputValue}}</p>
+
+  <button (click)="resetInput()">Reset</button>
+
+  <input type="checkbox" [(ngModel)]="checkBoxValue"> Afficher le texte
+
+  @if(checkBoxValue){
+  <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat iste accusantium sapiente, at voluptates sint quae
+    aut iusto dolore repellendus maiores dolores nulla, cumque, inventore blanditiis earum eos? Incidunt, inventore.
+  </p>
+  } @else {
+  <p></p>
+  }
+
+</section>
