@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IUser } from '../../interface/i-user';
 import { CommonModule } from '@angular/common';
+import { IUser } from '../../interface/i-user';
 
 @Component({
   selector: 'app-directive-for',

@@ -10,11 +10,21 @@ export class Compteur {
 
   count: number = 0;
 
-
   // Coder les fonctions
 
-  increment() { }
-  decrement() { }
-  reset() { }
+  increment() {
+    // this.count = this.count + 1
+    this.count += 1
+    // this.count++
+  }
+
+  decrement() {
+    // this.count = this.count + 1
+    this.count -= 1
+    // this.count--
+  }
+  reset() {
+    this.count = 0
+  }
 
 }

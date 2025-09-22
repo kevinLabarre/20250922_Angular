@@ -5,4 +5,3 @@ export interface IUser {
   city?: string, // city est 'optionnel'
   // city: string | undefined,  // Equivalent à ligne ci-dessus
 }
-
