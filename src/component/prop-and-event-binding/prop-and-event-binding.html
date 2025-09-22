@@ -1,0 +1,22 @@
+<section>
+  <h1>Property and event binding</h1>
+  <!-- Sans 'binding' (fournie directement l'adresse) -->
+  <img alt="icone" src="favicon.ico" />
+
+  <!-- On utilise le 'property binding'
+      -> Pour lier une variable de class à une propriété HTML, je dois
+      utiliser les '[]'
+  -->
+  <img alt="icone" [src]="imageSrc" />
+
+  <!-- On utilise le 'property binding'
+      -> Syntax très récente, encore peu utiliser
+  -->
+  <img alt="icone" src="{{imageSrc}}" />
+
+
+  <button [disabled]="buttonDesabled">Cliquez ici !</button>
+
+  <button (click)="handleClick()">Activer / Désactiver le bouton</button>
+
+</section>

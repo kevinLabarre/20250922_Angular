@@ -1,4 +1,7 @@
 import { Component, signal } from '@angular/core';
+import { DirectiveIf } from "../component/directive-if/directive-if";
+import { DirectiveFor } from "../component/directive-for/directive-for";
+import { PropAndEventBinding } from "../component/prop-and-event-binding/prop-and-event-binding";
 
 interface User {
   name: string,
@@ -28,7 +31,7 @@ class UserModel {
 
 @Component({
   selector: 'app-root', // utiliser pour 'appeler' ce composant
-  imports: [],
+  imports: [DirectiveIf, DirectiveFor, PropAndEventBinding],
   // template: `<h1>Bienvenue !!!!!!</h1>`,  // On peut directement écrire notre HTML dans 'template' , si l'on souhaite utiliser un seul fichier
   templateUrl: './app.html',
   styleUrl: './app.css'

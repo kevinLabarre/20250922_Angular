@@ -1,0 +1,34 @@
+<section>
+  <h1>Directive {{'@for'}}</h1>
+
+  @for(u of users ; track u.id){
+  <ul>
+    <li>{{u.id}}</li>
+    <li>nom: {{u.name}}</li>
+    <li>age: {{u.age}}</li>
+  </ul>
+  }
+
+  @for(u of users ; let i = $index ; track u.id){
+  <ul>
+    <li>id: {{u.id}} - index: {{i}}</li>
+    <li>nom: {{u.name}}</li>
+    <li>age: {{u.age}}</li>
+  </ul>
+  }
+
+  <ul>
+    <!-- Il est conseillé de 'tracker' l'index UNIQUEMENT sur des listes statiques  -->
+    @for(name of names ; let i = $index ; track i) {
+    <li>{{name}}</li>
+    }
+  </ul>
+
+
+  <!-- Ancienne syntaxe -->
+  <ul *ngFor="let name of names ; let i = index">
+    <li>index: {{i}}</li>
+    <li>{{name}}</li>
+  </ul>
+
+</section>
