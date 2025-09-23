@@ -5,6 +5,7 @@ import { PropAndEventBinding } from "../component/prop-and-event-binding/prop-an
 import { Compteur } from "../component/compteur/compteur";
 import { InputWithNgModel } from "../component/input-with-ng-model/input-with-ng-model";
 import { PassageDonneParentEnfant } from "../component/passage-donne-parent-enfant/passage-donne-parent-enfant";
+import { Exercice } from "../component/exercice/exercice";
 
 interface User {
   name: string,
@@ -34,7 +35,7 @@ class UserModel {
 
 @Component({
   selector: 'app-root', // utiliser pour 'appeler' ce composant
-  imports: [DirectiveIf, DirectiveFor, PropAndEventBinding, Compteur, InputWithNgModel, PassageDonneParentEnfant],
+  imports: [DirectiveIf, DirectiveFor, PropAndEventBinding, Compteur, InputWithNgModel, PassageDonneParentEnfant, Exercice],
   // template: `<h1>Bienvenue !!!!!!</h1>`,  // On peut directement écrire notre HTML dans 'template' , si l'on souhaite utiliser un seul fichier
   templateUrl: './app.html',
   styleUrl: './app.css'
