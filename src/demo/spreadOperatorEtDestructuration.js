@@ -36,7 +36,7 @@ const sum = (initialValue, ...numbers) => {
 
 console.log('Résulat somme: ', sum(1, 3, 5, 6, 45, 6, 12, 3, 5));
 
-// Destructuration
+// Destructuration sur les tableaux
 const names = ['Riri', 'Fifi', 'Loulou'];
 
 const [name1, name2] = names;
@@ -50,3 +50,17 @@ console.log(name2);
 const [name4, ...rest] = names;
 console.log('name4: ', name4);
 console.log('rest: ', rest);
+
+// Destructuration sur les objets
+const destructuredUser = {
+  id: 1,
+  name: 'John',
+  age: 19,
+};
+
+const { name, age } = destructuredUser;
+console.log(name, age);
+
+// Destrucutration + nommage des variables
+const { name: destructuredName, age: destructuredAge } = destructuredUser;
+console.log(destructuredName, destructuredAge);

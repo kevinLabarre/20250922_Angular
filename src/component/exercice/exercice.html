@@ -1,5 +1,8 @@
 <section>
   <h1>Exercice</h1>
+
+  <h2>Exemple 1</h2>
+
   <pre>
     - Créer un composant 'tableau' (ou liste) pour afficher mes produits
     - Appeler deux fois le composant enfant
@@ -13,5 +16,11 @@
 
   <app-products-list [products]="fruits" />
   <app-products-list [products]="legumes" />
+
+  <h2>Exemple 2: avec getters</h2>
+  <input type="checkbox" [(ngModel)]="checkboxValue2" /> Afficher Hors stock
+
+  <app-products-list [products]="fruitsGetter" />
+  <app-products-list [products]="legumesGetter" />
 
 </section>

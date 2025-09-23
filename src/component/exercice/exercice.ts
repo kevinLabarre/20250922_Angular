@@ -20,6 +20,9 @@ export class Exercice {
     { id: 8, nom: 'Brocoli', quantite: 0, type: 'legume', prix: 1.8 }
   ];
 
+
+  // EXEMPLE 1 :
+
   // Pour trier .filter()
   // fruits = this.produits.filter(p => p.type === 'fruit')
   // legumes = this.produits.filter((p) => p.type === 'legume')
@@ -43,12 +46,29 @@ export class Exercice {
         return p.type === "legume" && p.quantite > 0
       }
     })
+  }
 
+  // ______________________________________________________________________________
 
-    // if (!horsStock) {
-    //   this.fruits = this.produits.filter(p => p.quantite > 0)
-    //   this.legumes = this.legumes.filter(p => p.quantite > 0)
-    // }
+  // EXEMPLE 2 : Avec les getters
+
+  checkboxValue2: boolean = false
+
+  get fruitsGetter() {
+    return this.filteredProducts('fruit')
+  }
+
+  get legumesGetter() {
+    return this.filteredProducts('legume')
+  }
+
+  filteredProducts(type: string) {
+    return this.produits.filter(p => {
+      if (this.checkboxValue2)
+        return p.type === type
+      else
+        return p.type === type && p.quantite > 0
+    })
   }
 
 }
