@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { ProductsList } from "../products-list/products-list";
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-exercice',
-  imports: [],
+  imports: [ProductsList, FormsModule],
   templateUrl: './exercice.html',
   styleUrl: './exercice.css'
 })
@@ -17,4 +19,36 @@ export class Exercice {
     { id: 7, nom: 'Poivron', quantite: 5, type: 'legume', prix: 1.3 },
     { id: 8, nom: 'Brocoli', quantite: 0, type: 'legume', prix: 1.8 }
   ];
+
+  // Pour trier .filter()
+  // fruits = this.produits.filter(p => p.type === 'fruit')
+  // legumes = this.produits.filter((p) => p.type === 'legume')
+  fruits: any[] = this.produits.filter(p => p.type === 'fruit')
+  legumes: any[] = this.produits.filter((p) => p.type === 'legume')
+
+  checkboxValue: boolean = false // bind avec ma checkbox
+  handleChange(horsStock: boolean) {
+    this.fruits = this.produits.filter(p => {
+      if (horsStock) {
+        return p.type === 'fruit'
+      } else {
+        return p.type === 'fruit' && p.quantite > 0
+      }
+    })
+
+    this.legumes = this.produits.filter(p => {
+      if (horsStock) {
+        return p.type === "legume"
+      } else {
+        return p.type === "legume" && p.quantite > 0
+      }
+    })
+
+
+    // if (!horsStock) {
+    //   this.fruits = this.produits.filter(p => p.quantite > 0)
+    //   this.legumes = this.legumes.filter(p => p.quantite > 0)
+    // }
+  }
+
 }
